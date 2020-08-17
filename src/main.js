@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import Login from './components/login'
 import './index.scss'
 
-createApp(App).mount('#app')
+createApp(Login).mount('#app')

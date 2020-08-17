@@ -1,0 +1,60 @@
+/**
+ * @desccription scss变量文件
+*/
+
+/** 默认主题变量*/
+$default-color-blue: #7788ee;
+$default-color-blue-light: #9aa7f7;
+$default-color-white: #fff;
+$default-color-red: #f25544;
+$default-color-purple: #b7e;
+$default-color-skyblue: #66d4f4;
+$default-color-yellow: #ffbf00;
+$default-color-green: #48d06b;
+$default-color-gray: #999;
+$default-color-black: #000;
+$default-color-dark-blue: #37e;
+
+/** 菜单背景色*/
+$default-sidebar-main: #474c6a;
+$default-sidebar-main-hover: #353950;
+$default-bg: #203060;
+$default-bg-main: #121c44;
+
+/** TAB样式*/
+$default-tab-color-title: #7688b1;
+$default-tab-color: #666;
+$default-tab-color-hover: #eee;
+$default-tab-border-color: #e4e4e4;
+$default-close-icon-color: #999;
+
+// 文字顔色
+$default-text-color: #666;
+$default-text-color-hight: #333;
+$default-text-color-title: #151515;
+$default-text-color-placeholder: #999;
+$default-text-color-btn: #fff;
+
+// 边框
+$default-border-color: #ccc;
+$default-border-color-hover: #78e;
+$default-border-color-focus: #78e;
+$default-border-color-table: #d3d3d3;
+
+// 按钮
+$default-bg-btn: #78e;
+$default-bg-btn-hover: #9aa7f7;
+$default-bg-btn-active: #3040b0;
+$default-bg-disabled: #999;
+
+/* 边框 */
+@mixin border-default {
+  border: 1px solid $default-border-color;
+}
+
+/* 超出隐藏 */
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,8 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #abd;
+  font-size: 0.5rem;
+}
+:-moz-placeholder {
+  color: #abd;
+  font-size: 0.5rem;
+}
+::-moz-placeholder {
+  color: #abd;
+  font-size: 0.5rem;
+}
+:-ms-input-placeholder {
+  color: #abd;
+  font-size: 0.5rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media screen and (min-device-width:768px) and (max-device-width:1800px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-device-width:1801px) and (max-device-width:2000px) {
+
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-device-width:2001px) and (max-device-width:2560px) {
+
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-device-width:2561px) and (max-device-width:3840px) {
+
+  html,
+  body {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-device-width:3841px) {
+
+  html,
+  body {
+    // font-size: 12px;
+    font-size: 35px;
+  }
 }

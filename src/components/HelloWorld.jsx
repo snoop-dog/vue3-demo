@@ -1,4 +1,4 @@
-import { ref,render, defineComponent, reactive } from "vue";
+import { ref,render, defineComponent, reactive, onMounted } from "vue";
 
 export default defineComponent({
   setup (props, ctx) {
@@ -8,9 +8,15 @@ export default defineComponent({
     }
   },
 
+  data () {
+    return {
+      dd: 11
+    }
+  },
+
   render () {
     return (
-      <div>{this.text}</div>
+    <div>{this.text}{this.dd}</div>
     )
   }
 })
