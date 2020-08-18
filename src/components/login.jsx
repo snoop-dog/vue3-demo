@@ -51,7 +51,7 @@ export default defineComponent({
 								<input className='input-item-value' placeholder='请输入密码' type='password' value={this.passWord} onInput={this.input} />
 							</div>
 						</div>
-					</div>
+					</div> 
 
 					<div className='login-footer'>
 						<button className='login-btn' onClick={this.submitLogin}>登录</button>
