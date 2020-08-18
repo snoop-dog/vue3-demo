@@ -44,11 +44,11 @@ export default defineComponent({
 						<div className='login-box-ctx'>
 							<div className='login-input-item'>
 								<span className='input-item-label'>账号：</span>
-								<input className='input-item-value' placeholder='请输入账号' type='text' value={this.userNmae} onInput={this.input}/>
+								<input className='input-item-value' placeholder='请输入账号' type='text' value={this.userNmae} onInput={this.input} />
 							</div>
 							<div className='login-input-item'>
 								<span className='input-item-label'>密码：</span>
-								<input className='input-item-value' placeholder='请输入密码' type='password' value={this.passWord} onInput={this.input}/>
+								<input className='input-item-value' placeholder='请输入密码' type='password' value={this.passWord} onInput={this.input} />
 							</div>
 						</div>
 					</div>
