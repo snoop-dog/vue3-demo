@@ -1,4 +1,5 @@
 import { ref, defineComponent } from "vue"
+import http from '../middleware/index'
 import '../assets/scss/login.scss'
 
 export default defineComponent({
@@ -17,8 +18,26 @@ export default defineComponent({
 
 		// 点击登录
 		let submitLogin = () => {
+			let params = {
+				username: userNmae.value,
+				password: passWord.value
+			}
+			if (!validLoginParam()) return
+
+			http('post', '/api/login').then(data => {
+				console.log(data)
+			})
 			console.log(userNmae)
 			console.log(passWord)
+		}
+
+		// 验证登录参数
+		function validLoginParam () {
+			if (!userNmae.value || !passWord.value) {
+				return false
+			} else {
+				return true
+			}
 		}
 
 		return {
