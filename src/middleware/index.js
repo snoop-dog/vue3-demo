@@ -2,8 +2,9 @@ import axios from 'axios';
 import qs from 'qs';
 
 const request = axios.create({
-  timeout: 5000,
-  withCredentials: true,
+  timeout: 60000,
+  baseURL: 'http://192.168.1.110:9527',
+  // withCredentials: true,
 });
 
 request.interceptors.request.use(
