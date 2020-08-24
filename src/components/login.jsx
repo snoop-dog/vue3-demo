@@ -1,9 +1,10 @@
 import { ref, defineComponent } from "vue"
-import http from '../middleware/index'
+import { doLogin } from '../api/index'
 import '../assets/scss/login.scss'
 
 export default defineComponent({
-	setup(props, ctx) {
+	name: 'Login',
+	setup (props, ctx) {
 		let userNmae = ref('admin')
 		let passWord = ref('123')
 
@@ -24,7 +25,7 @@ export default defineComponent({
 			}
 			if (!validLoginParam()) return
 
-			http('post', '/api/login').then(data => {
+			doLogin(params).then(data => {
 				console.log(data)
 			})
 			console.log(userNmae)
