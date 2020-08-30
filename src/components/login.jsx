@@ -1,6 +1,7 @@
 import { ref, defineComponent } from "vue"
-import { doLogin } from '../api/index'
+import { doLogin } from '../apis/index'
 import '../assets/scss/login.scss'
+import Router from '../routes/index'
 
 export default defineComponent({
 	name: 'Login',
@@ -26,7 +27,8 @@ export default defineComponent({
 			if (!validLoginParam()) return
 
 			doLogin(params).then(data => {
-				console.log(data)
+				console.log(Router)
+				Router.push('/layout')
 			})
 			console.log(userNmae)
 			console.log(passWord)

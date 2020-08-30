@@ -1,13 +1,14 @@
 import { ref, defineComponent } from "vue"
+import Router from '../routes/index'
 
 export default defineComponent({
 	setup(props, ctx) {
-		
+		Router.go(-1)
 	},
 
 	render() {
 		return (
-			<div>this is middle page</div>
+			<router-view>qqq</router-view>
 		)
 	}
 })

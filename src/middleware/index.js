@@ -3,7 +3,7 @@ import qs from 'qs'
 
 const request = axios.create({
   timeout: 60000,
-  baseURL: 'http://172.16.3.225:9527',
+  baseURL: 'http://192.168.1.110:9527',
   // withCredentials: true,
 })
 
