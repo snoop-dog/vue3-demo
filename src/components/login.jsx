@@ -27,7 +27,7 @@ export default defineComponent({
 			if (!validLoginParam()) return
 
 			doLogin(params).then(data => {
-				console.log(Router)
+				console.log(router)
 				Router.push('/layout')
 			})
 			console.log(userNmae)
