@@ -9,8 +9,9 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 
-export default {
-  name: 'App'
-};
+export default defineComponent({
+  name: 'app'
+})
 </script>

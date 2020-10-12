@@ -3,7 +3,8 @@
 .login-container {
   width: 100vw;
   height: 100vh;
-  background: $default-bg;
+  background: url('../images/Manhattan_Sunset_by_Giacomo_Ferroni.jpg') 0 0 no-repeat;
+  background-size: 100% 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +48,7 @@
       align-items: center;
 
       .login-box-ctx {
-        width: 80%;
+        width: 60%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -68,10 +69,10 @@
           }
 
           .input-item-value {
-            width: calc(100% - 4rem);
+            width: 100%;
             height: 2rem;
             background: rgba(32, 48, 96, 0.5);
-            color: $default-text-color-btn;
+            color: $default-color-gray-light;
             padding: 0 0.5rem;
           }
         }
@@ -87,7 +88,7 @@
 
       .login-btn {
         height: 2rem;
-        width: 50%;
+        width: 60%;
         outline: none;
         border: none;
         background: $default-color-blue;

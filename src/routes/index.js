@@ -12,6 +12,7 @@ let router = createRouter({
 			path: '/layout', 
 			name: 'Layout',
 			component: () => import( "../views/layout/app-main.vue"),
+			redirect: '/middle',
 			children: [
 				{ 
 					path: '/middle', 

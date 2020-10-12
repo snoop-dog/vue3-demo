@@ -8,7 +8,7 @@ export default defineComponent({
 
 	render() {
 		return (
-			<router-view>qqq</router-view>
+			<div>qqq</div>
 		)
 	}
 })

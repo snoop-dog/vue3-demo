@@ -1,22 +1,25 @@
 <template>
   <div>hello world</div>
-  <router-view v-slot="{ Component }">
-    <transition>
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </transition>
+  <router-view key='key' v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
   </router-view>
 </template>
 
 <script>
-import Router from '../../routes/index'
-import { ref } from 'vue';
-export default {
-  computed: {
-    key () {
-      return '/middle'
+import { defineComponent, reactive, toRefs, watch } from "vue";
+import { useStore } from "vuex";
+import { useRouter, useRoute } from "vue-router";
+export default defineComponent({
+  name: 'app-main',
+  setup () {
+    const route = useRoute()
+    console.log(route)
+
+    return {
+      route
     }
   }
-};
+})
 </script>

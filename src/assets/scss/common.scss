@@ -1,0 +1,7 @@
+@import './variable.scss';
+// ant-design样式重写
+
+.ant-input {
+  border: 1px solid transparent;
+  border-image: linear-gradient($default-color-blue-light, $default-color-dark-blue) 30 30 round;
+}
