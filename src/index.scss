@@ -1,3 +1,5 @@
+@import './assets/scss/variable';
+
 body {
   margin: 0;
   padding: 0;
@@ -10,20 +12,20 @@ input {
 }
 
 ::-webkit-input-placeholder {
-  color: #abd;
-  font-size: 0.5rem;
+  color: $default-text-color-gray;
+  font-size: 0.9rem;
 }
 :-moz-placeholder {
-  color: #abd;
-  font-size: 0.5rem;
+  color: $default-text-color-gray;
+  font-size: 0.9rem;
 }
 ::-moz-placeholder {
-  color: #abd;
-  font-size: 0.5rem;
+  color: $default-text-color-gray;
+  font-size: 0.9rem;
 }
 :-ms-input-placeholder {
-  color: #abd;
-  font-size: 0.5rem;
+  color: $default-text-color-gray;
+  font-size: 0.9rem;
 }
 
 #app {

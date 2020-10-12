@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(18, 28, 68, 0.5);
+    background: rgba(18, 28, 68, 0.8);
     border-radius: 0.2rem;
     box-shadow: 0 0 10px $default-bg-main;
 
@@ -70,10 +70,16 @@
 
           .input-item-value {
             width: 100%;
-            height: 2rem;
+            height: 2.66rem;
+            line-height: 2.66rem;
             background: rgba(32, 48, 96, 0.5);
-            color: $default-color-gray-light;
-            padding: 0 0.5rem;
+            color: $default-text-color-gray;
+            padding: 0 0.8rem;
+            border-radius: 0.3rem;
+            border: 1px solid rgba(51,68,102,.8);
+            &:focus {
+              border-color: rgba(51,119,238,.5);
+            }
           }
         }
       }

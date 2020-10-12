@@ -26,7 +26,7 @@ export default defineComponent({
 				username: userNmae.value,
 				password: passWord.value
 			}
-			
+
 			if (!validLoginParam()) return
 
 			doLogin(params).then(data => {
