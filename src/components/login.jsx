@@ -1,5 +1,5 @@
 import { ref, defineComponent } from 'vue';
-import { doLogin } from '../apis/index';
+import { doLogin } from '/@/apis/index';
 import '../assets/scss/login.scss';
 import { useRouter } from 'vue-router';
 import { Button, Input, message } from 'ant-design-vue';
@@ -31,11 +31,11 @@ export default defineComponent({
 
       doLogin(params).then((data) => {
         router.push('/layout');
-      });
+      })
     };
 
     // 验证登录参数
-    function validLoginParam() {
+    const validLoginParam = () => {
       if (!userNmae.value || !passWord.value) {
         return message.error('请输入用户名，密码！');
       } else {

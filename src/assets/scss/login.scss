@@ -97,14 +97,14 @@
         width: 60%;
         outline: none;
         border: none;
-        background: $default-color-blue;
         color: $default-text-color-btn;
         cursor: pointer;
         letter-spacing: 0.2rem;
         border-radius: 0.2rem;
+        background: linear-gradient(30deg, $default-color-blue, $default-color-blue-light);
 
         &:hover {
-          background: $default-color-blue-light;
+          background: linear-gradient(60deg, $default-color-blue-light, $default-color-blue);
         }
       }
     }

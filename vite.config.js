@@ -1,10 +1,12 @@
+const path = require('path')
+
 module.exports = {
     // 导入别名
     // 这些条目可以是精确的请求->请求映射*（精确，无通配符语法）
     // 也可以是请求路径-> fs目录映射。 *使用目录映射时
     // 键**必须以斜杠开头和结尾**
     alias: {
-      '@apis': path.resolve(__dirname, 'src/apis'),
+      '/@/': path.resolve(__dirname, './src'),
       '@assets': path.resolve(__dirname, 'src/assets'),
       '@components': path.resolve(__dirname, 'src/components'),
       // ‘react-dom‘: ‘@pika/react-dom‘
