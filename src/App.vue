@@ -15,3 +15,7 @@ export default defineComponent({
   name: 'app'
 })
 </script>
+
+<style lang='scss' scoped>
+
+</style>

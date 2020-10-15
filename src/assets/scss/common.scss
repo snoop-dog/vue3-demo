@@ -5,3 +5,41 @@
   border: 1px solid transparent;
   border-image: linear-gradient($default-color-blue-light, $default-color-dark-blue) 30 30 round;
 }
+
+input,
+select,
+textarea {
+  outline: none;
+  border-color: $default-border-color;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+
+  &:hover {
+    border-color: $default-border-color-hover;
+  }
+
+  &:focus {
+    border-color: $default-border-color-focus;
+    box-shadow: 0 0 5px 0 $default-border-color-focus;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $default-text-placeholder !important;
+    font-size: 0.9rem;
+  }
+
+  &::-moz-input-placeholder {
+    color: $default-text-placeholder !important;
+    font-size: 0.9rem;
+  }
+
+  &::-ms-input-placeholder {
+    color: $default-text-placeholder !important;
+    font-size: 0.9rem;
+  }
+
+  &::-o-input-placeholder {
+    color: $default-text-placeholder !important;
+    font-size: 0.9rem;
+  }
+}

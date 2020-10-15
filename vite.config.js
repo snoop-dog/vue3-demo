@@ -20,15 +20,26 @@ module.exports = {
     vueCustomBlockTransforms: {
       // i18n: src => `export default Comp => { ... }`,
     },
+    port: 9525,
+    chainWebpack: () => {},
+    configureWebpack: () => {},
     // 为开发服务器配置自定义代理规则。
-    proxy: {
+    devServer: {
+      host: '0.0.0.0',
+      port: 9525,
+      https: false,
+      hotOnly: false,
+      // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
       // proxy: {
-      //   ‘/foo‘: ‘http://localhost:4567/foo‘,
-      //   ‘/api‘: {
-      //     target: ‘http://jsonplaceholder.typicode.com‘,
+      //   '/api': {
+      //     target: 'http://localhost:8880',
       //     changeOrigin: true,
-      //     rewrite: path => path.replace(/^\/api/, ‘‘),
-      //   },
+      //     secure: false,
+      //     // ws: true,
+      //     pathRewrite: {
+      //       '^/api': '/static/mock' // 请求数据路径别名,这里是注意将static/mock放入public文件夹
+      //     }
+      //   }
       // },
-    },
-  }
+    }
+}

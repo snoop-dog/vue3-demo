@@ -1,13 +1,13 @@
 import { ref, defineComponent } from 'vue';
 import { doLogin } from '/@/apis/index';
-import '../assets/scss/login.scss';
+import '/@/assets/scss/login.scss';
 import { useRouter } from 'vue-router';
 import { Button, Input, message } from 'ant-design-vue';
 
 export default defineComponent({
   name: 'Login',
   setup(props, ctx) {
-    let userNmae = ref('admin');
+    let userName = ref('admin');
     let passWord = ref('123');
     const router = useRouter();
 
@@ -16,27 +16,27 @@ export default defineComponent({
       if (e.target.type === 'password') {
         passWord.value = e.target.value;
       } else {
-        userNmae.value = e.target.value;
+        userName.value = e.target.value;
       }
     };
 
     // 点击登录
     const submitLogin = () => {
       const params = {
-        username: userNmae.value,
+        username: userName.value,
         password: passWord.value,
       };
 
       if (!validLoginParam()) return;
 
       doLogin(params).then((data) => {
-        router.push('/layout');
+        router.replace('/layout')
       })
     };
 
     // 验证登录参数
     const validLoginParam = () => {
-      if (!userNmae.value || !passWord.value) {
+      if (!userName.value || !passWord.value) {
         return message.error('请输入用户名，密码！');
       } else {
         return true;
@@ -44,7 +44,7 @@ export default defineComponent({
     }
 
     return {
-      userNmae,
+      userName,
       passWord,
       input,
       submitLogin,
@@ -78,7 +78,7 @@ export default defineComponent({
                   class="input-item-value"
                   placeholder="账号"
                   type="text"
-                  value={this.userNmae}
+                  value={this.userName}
                   onInput={this.input}
                 />
               </div>
