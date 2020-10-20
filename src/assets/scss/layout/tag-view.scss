@@ -1,0 +1,48 @@
+@import '../variable.scss';
+
+.tag-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  .ant-tabs {
+    flex: 1;
+    height: 100%;
+    .ant-tabs-bar {
+      height: 100%;
+      border: none;
+      .ant-tabs-nav-container {
+        height: 100%;
+        .ant-tabs-nav-wrap {
+          height: 100%;
+          .ant-tabs-nav-scroll {
+            height: 100%;
+            display: flex;
+            .ant-tabs-nav {
+              height: 100%;
+              color: $default-text-color-btn;
+              > div:not(.ant-tabs-ink-bar) {
+                height: 100%;
+                .ant-tabs-tab {
+                  height: 100%;
+                  &.ant-tabs-tab-active {
+                    background: $default-bg-btn;
+                    color: $default-text-color-btn;
+                  }
+                }
+              }
+              .ant-tabs-ink-bar {
+                bottom: 0;
+                background-color: $default-bg-btn;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .fold-box,
+  .tool-box {
+    flex: 0 0 20rem;
+  }
+}

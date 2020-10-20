@@ -1,0 +1,23 @@
+@import '../variable.scss';
+
+.ant-menu {
+  background: rgb(0, 21, 41);
+  color: #fff;
+  &:not(.ant-menu-horizontal) {
+    .ant-menu-item-selected {
+      background: rgba(18, 28, 68, 0.5);
+    }
+  }
+  .ant-menu-submenu {
+    > .ant-menu {
+      background: rgb(0, 21, 41);
+      color: #fff;
+    }
+  }
+  .ant-menu-item, 
+  .ant-menu-submenu-title {
+    &:active {
+      background: rgb(0, 21, 41);
+    }
+  }
+}

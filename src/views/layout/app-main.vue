@@ -49,5 +49,8 @@ export default defineComponent({
         display: flex;
       }
     }
+    .layout-header {
+      height: 57px;
+    }
   }
 </style>

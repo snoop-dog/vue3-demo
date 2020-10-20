@@ -1,14 +1,15 @@
 import { ref, reactive,  defineComponent } from 'vue';
 import { Menu } from 'ant-design-vue';
-// import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+// import '/@/assets/scss/layout/side-bar.scss';
+// import { mail, appstore, setting } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 
 export default defineComponent({
   name: 'slide-bar',
   setup () {
-    const openKeys = reactive(['sub1'])
-    const rootSubmenuKeys = reactive(['sub1', 'sub2', 'sub4'])
+    let openKeys = ref(['sub1'])
+    const rootSubmenuKeys = ref(['sub1', 'sub2', 'sub4'])
 
     const onOpenChange = keys => {
       const latestOpenKey = keys.find(key => openKeys.value.indexOf(key) === -1);
@@ -29,6 +30,8 @@ export default defineComponent({
     return (
       <Menu
         mode="inline"
+        theme="dark"
+        defaultSelectedKeys={['1']}
         openKeys={this.openKeys}
         onOpenChange={this.onOpenChange}
         style={{ width: 256 }}
@@ -37,7 +40,7 @@ export default defineComponent({
           key="sub1"
           title={
             <span>
-              {/* <MailOutlined /> */}
+              {/* <mail /> */}
               <span>Navigation One</span>
             </span>
           }
