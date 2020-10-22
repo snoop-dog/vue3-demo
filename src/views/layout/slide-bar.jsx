@@ -1,15 +1,18 @@
-import { ref, reactive,  defineComponent } from 'vue';
+import { ref, reactive,  defineComponent, onBeforeMount } from 'vue';
 import { Menu } from 'ant-design-vue';
+import { getMenuData } from '/@/apis/index.js'
 // import '/@/assets/scss/layout/side-bar.scss';
-// import { mail, appstore, setting } from '@ant-design/icons';
+// import Icon from '@ant-design/icons-vue';
 
 const { SubMenu } = Menu;
 
 export default defineComponent({
   name: 'slide-bar',
   setup () {
-    let openKeys = ref(['sub1'])
-    const rootSubmenuKeys = ref(['sub1', 'sub2', 'sub4'])
+    let openKeys = ref(['103'])
+    let menuData = ref([])
+    const inlineCollapsed = ref(false)
+    const rootSubmenuKeys = ref(['102', '103', '104', '105'])
 
     const onOpenChange = keys => {
       const latestOpenKey = keys.find(key => openKeys.value.indexOf(key) === -1);
@@ -20,10 +23,33 @@ export default defineComponent({
       }
     };
 
+    const onSelect = ({item, key, selectedKeys}) => {
+      console.log(item)
+      console.log(key)
+      console.log(selectedKeys)
+    }
+
+    const getMenu = () => {
+      getMenuData({})
+        .then(res => {
+          menuData.value = res?.data[0]?.children
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    onBeforeMount(() => {
+      getMenu()
+    })
+
     return {
       openKeys,
+      menuData,
+      inlineCollapsed,
       rootSubmenuKeys,
-      onOpenChange
+      onOpenChange,
+      onSelect
     }
   },
   render () {
@@ -31,39 +57,31 @@ export default defineComponent({
       <Menu
         mode="inline"
         theme="dark"
-        defaultSelectedKeys={['1']}
+        inlineCollapsed={this.inlineCollapsed}
+        defaultSelectedKeys={['103082']}
         openKeys={this.openKeys}
         onOpenChange={this.onOpenChange}
-        style={{ width: 256 }}
+        onSelect={this.onSelect}
+        // style={{ width: 200 }}
       >
-        <SubMenu
-          key="sub1"
-          title={
-            <span>
-              {/* <mail /> */}
-              <span>Navigation One</span>
-            </span>
-          }
-        >
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="4">Option 4</Menu.Item>
-        </SubMenu>
-        <SubMenu key="sub2" title="Navigation Two">
-          <Menu.Item key="5">Option 5</Menu.Item>
-          <Menu.Item key="6">Option 6</Menu.Item>
-          <SubMenu key="sub3" title="Submenu">
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-          </SubMenu>
-        </SubMenu>
-        <SubMenu key="sub4" title="Navigation Three">
-          <Menu.Item key="9">Option 9</Menu.Item>
-          <Menu.Item key="10">Option 10</Menu.Item>
-          <Menu.Item key="11">Option 11</Menu.Item>
-          <Menu.Item key="12">Option 12</Menu.Item>
-        </SubMenu>
+        {
+          this.menuData.map(item => (
+            <SubMenu
+              key={item.id}
+              title={
+                <span>
+                  <span>{item.name}</span>
+                </span>
+              }
+            >
+              {
+                item.children.map(it => (
+                  <Menu.Item key={item.id}>{it.name}</Menu.Item>
+                ))
+              }
+            </SubMenu>
+          ))
+        }
       </Menu>
     )
   }

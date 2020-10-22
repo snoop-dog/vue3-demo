@@ -51,6 +51,8 @@ export default defineComponent({
     }
     .layout-header {
       height: 57px;
+      padding: 0 1.5rem;
+      background: rgba(51, 68, 102, 0.8);
     }
   }
 </style>
